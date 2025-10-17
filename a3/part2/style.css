@@ -43,3 +43,6 @@ h2 {
   margin-bottom: 0;
   letter-spacing: 1px;
 }
+section h2 + p {
+  text-indent: 2rem;
+}
