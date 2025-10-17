@@ -69,3 +69,7 @@ a:hover {
   text-decoration: none;
   color: #773333;
 }
+ul,
+ol {
+  margin: 1rem 0;
+}
