@@ -101,3 +101,13 @@ nav li a {
   font-weight: bold;
   border: 1px solid #aa6666;
 }
+nav li a:focus,
+nav li a:hover {
+  color: white;
+  background: #aa6666;
+}
+
+nav li a:active {
+  color: white;
+  background: black;
+}
