@@ -19,4 +19,10 @@ for (const image of images){
     thumbBar.appendChild(newImage);
     newImage.addEventListener("click", updateDisplayedImage);
 
+    newImage.addEventListener("keydown", (e) => {
+    if (e.code === "Enter") {
+      updateDisplayedImage(e);
+    }
+})
+
 }
