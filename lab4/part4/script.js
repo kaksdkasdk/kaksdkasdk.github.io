@@ -86,6 +86,23 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
+window.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "a":
+      this.x -= this.velX;
+      break;
+    case "d":
+      this.x += this.velX;
+      break;
+    case "w":
+      this.y -= this.velY;
+      break;
+    case "s":
+      this.y += this.velY;
+      break;
+  }
+});
+
 // animation loop
 function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
