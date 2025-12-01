@@ -49,7 +49,7 @@ function generateStory() {
     const name = customName.value;
     newStory = newStory.replace("Sam", name);
   }
-
+  
   if (document.getElementById("uk").checked) {
     const weight = `${Math.round(300 / 14)} stone`
     const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
