@@ -10,7 +10,7 @@ const images = [
   { filename: "pic4.jpg", alt: "Section of wall from a pharaoh's tomb" },
   { filename: "pic5.jpg", alt: "Large moth on a leaf" },
 ]
-const baseURL = "https://kaksdkasdk.github.io\lab4\part2\photos";
+const baseURL = "https://mdn.github.io/shared-assets/images/examples/learn/gallery/";
 for (const image of images){
     const newImage = document.createElement("img");
     newImage.src = `${baseURL}${image.filename}`;
