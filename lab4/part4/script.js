@@ -85,23 +85,73 @@ while (balls.length < 25) {
 
   balls.push(ball);
 }
-
-window.addEventListener("keydown", (e) => {
-  switch (e.key) {
-    case "a":
-      this.x -= this.velX;
-      break;
-    case "d":
-      this.x += this.velX;
-      break;
-    case "w":
-      this.y -= this.velY;
-      break;
-    case "s":
-      this.y += this.velY;
-      break;
+class Player {
+  constructor(x, y, size = 20, speed = 15, color = "white") {
+    this.x = x;
+    this.y = y;
+    this.size = size;
+    this.speed = speed;
+    this.color = color;
   }
-});
+
+  draw() {
+    ctx.beginPath();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = this.color;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+  }
+
+  checkBounds() {
+    if (this.x - this.size < 0) this.x = this.size;
+    if (this.x + this.size > width) this.x = width - this.size;
+    if (this.y - this.size < 0) this.y = this.size;
+    if (this.y + this.size > height) this.y = height - this.size;
+  }
+
+  setControls() {
+    window.addEventListener("keydown", (e) => {
+      switch (e.key) {
+        case "a": // left
+        case "ArrowLeft":
+          this.x -= this.speed;
+          break;
+        case "d": // right
+        case "ArrowRight":
+          this.x += this.speed;
+          break;
+        case "w": // up
+        case "ArrowUp":
+          this.y -= this.speed;
+          break;
+        case "s": // down
+        case "ArrowDown":
+          this.y += this.speed;
+          break;
+      }
+    });
+  }
+
+  // pop balls we touch
+  collisionDetect() {
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.exists = false; // "pop" the ball
+        }
+      }
+    }
+  }
+}
+
+// make the player start in the middle
+const player = new Player(width / 2, height / 2);
+player.setControls();
+
 
 // animation loop
 function loop() {
