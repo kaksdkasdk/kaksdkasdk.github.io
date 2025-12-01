@@ -30,6 +30,10 @@ const events = ["pee's his pants","climaxes","starts working out"];
 
 function returnRandomStoryString() {
   // It was 94 Fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.
+  const randomCharacter = randomValueFromArray(characters);
+  const randomPlace = randomValueFromArray(places);
+  const randomEvent = randomValueFromArray(events);
+  let storyText = `Tis was a sunny day in ${randomPlace}, so ${randomCharacter} to find some shade. However due to the heat he ${randomEvent}`;
 
   return storyText;
 }
