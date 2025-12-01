@@ -33,7 +33,7 @@ function returnRandomStoryString() {
   const randomCharacter = randomValueFromArray(characters);
   const randomPlace = randomValueFromArray(places);
   const randomEvent = randomValueFromArray(events);
-  let storyText = `Tis was a sunny day in ${randomPlace}, so ${randomCharacter} to find some shade. However due to the heat he ${randomEvent}`;
+  let storyText = `Tis was a hot and sunny day in ${randomPlace}, so ${randomCharacter} to find some shade. However due to the heat he ${randomEvent}`;
 
   return storyText;
 }
@@ -49,7 +49,7 @@ function generateStory() {
     const name = customName.value;
     newStory = newStory.replace("Sam", name);
   }
-  
+
   if (document.getElementById("uk").checked) {
     const weight = `${Math.round(300 / 14)} stone`
     const temperature = `${Math.round((94 - 32) * (5 / 9))} Celsius`;
