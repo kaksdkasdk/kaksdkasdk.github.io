@@ -29,5 +29,13 @@ function updateDisplayedImage(e) {
   displayedImage.src = e.target.src;
   displayedImage.alt = e.target.alt;
 }
-
+btn.addEventListener("click", () =>{
+    if (btn.classList.contains("dark")) {
+    btn.textContent = "Lighten";
+    overlay.style.backgroundColor = "rgb(0 0 0 / 0.5)";
+  } else {
+    btn.textContent = "Darken";
+    overlay.style.backgroundColor = "rgb(0 0 0 / 0)";
+  }
+})
 }
