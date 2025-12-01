@@ -26,7 +26,7 @@ function randomValueFromArray(array) {
 // Partial return random string function
 const characters = ["Gandalf","Froddo","Aragorn"];
 const places = ["The Shire","Mordor","Rivendell"];
-const events = ["pee's his pants","climaxes","starts working out"];
+const events = ["pee's his pants","Only starts wearing underwear","starts working out"];
 
 function returnRandomStoryString() {
   // It was 94 Fahrenheit outside, so :insertx: went for a walk. When they got to :inserty:, they stared in horror for a few moments, then :insertz:. Bob saw the whole thing, but was not surprised — :insertx: weighs 300 pounds, and it was a hot day.
@@ -43,8 +43,11 @@ function returnRandomStoryString() {
 generateBtn.addEventListener("click", generateStory);
 
 function generateStory() {
+  let newStory = returnRandomStoryString();
+
   if (customName.value !== "") {
     const name = customName.value;
+    newStory = newStory.replace("Sam", name);
   }
 
   if (document.getElementById("uk").checked) {
