@@ -78,3 +78,17 @@ while (balls.length < 25) {
 
   balls.push(ball);
 }
+
+function loop() {
+  ctx.fillStyle = "rgb(0 0 0 / 25%)";
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    ball.draw();
+    ball.update();
+  }
+
+  requestAnimationFrame(loop);
+}
+
+loop();
