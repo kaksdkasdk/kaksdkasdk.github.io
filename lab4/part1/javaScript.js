@@ -33,7 +33,9 @@ function returnRandomStoryString() {
   const randomCharacter = randomValueFromArray(characters);
   const randomPlace = randomValueFromArray(places);
   const randomEvent = randomValueFromArray(events);
-  let storyText = `Tis was a hot and sunny day in ${randomPlace}, so ${randomCharacter} wanted to find some shade. However due to the heat he ${randomEvent}`;
+  let storyText = `Tis was a hot and sunny day in ${randomPlace}, 
+  so ${randomCharacter} wanted to find some shade. 
+  However due to the heat he ${randomEvent}`;
 
   return storyText;
 }
