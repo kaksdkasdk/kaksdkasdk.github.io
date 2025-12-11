@@ -9,7 +9,76 @@ html {
   font-size: 10px;
   background-color: #dde;
 }
+div[class="nav"] {
+  height: 60px;
+  background-color: #ffffff;
+  border-bottom: 4px solid #c5c7ec;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+}
 
+/* left side: menu list */
+
+div[class="nav"] ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex: 2;              /* takes most of the width */
+}
+
+div[class="nav"] li {
+  flex: 1;              /* equal spacing */
+  text-align: center;
+}
+
+div[class="nav"] a {
+  display: inline-block;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #444;
+  line-height: 60px;    /* vertically center in bar */
+}
+
+/* right side: search box + button */
+
+div[class="nav"] .search {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+.search input {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 1.6rem;
+  height: 32px;
+  box-sizing: border-box;
+}
+
+/* long white search box */
+
+.search input[type="search"] {
+  flex: 0 0 230px;      /* width of text box */
+  padding: 0 0.7rem;
+  border: 1px solid #aaa;
+}
+
+/* dark “Go!” button */
+
+.search input[type="submit"] {
+  flex: 0 0 70px;
+  margin-left: 0.8rem;
+  border: none;
+  background-color: #333;
+  color: #ffffff;
+  text-transform: uppercase;
+  cursor: pointer;
+}
 body {
   width: 80%;
   min-width: 1024px;
