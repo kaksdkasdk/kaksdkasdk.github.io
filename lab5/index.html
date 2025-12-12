@@ -34,11 +34,12 @@ Welcome to our wildlife website
         <li><a href="#">Blog</a></li>
       </ul>
 
-      <form class="search">
-        <input type="search" name="q" placeholder="Search query">
-        <input type="submit" value="Go!">
-      </form>
-    </div>
+<form class="search" role="search" aria-label="Site search">
+  <label for="search" class="visually-hidden">Search this site</label>
+  <input id="search" type="search" name="q" placeholder="Search query">
+  <input type="submit" value="Go!">
+</form>
+
 
 <main id="main-content">
   <article>
